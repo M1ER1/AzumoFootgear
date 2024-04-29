@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+
+</head>
+<body>
+<body>
+
+
+<!-- Registration -->
+<div class="login-page bg-secondary">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="bg-white shadow rounded">
+                    <div class="row">
+                        <div class="col-md-7 pe-0">
+                            <div class="form-left h-100 py-5 px-5">
+                                <form method="POST" id="login-form" action="process/process-signup.php" class="row g-4">
+                                    <div class="col-12">
+
+                                    <label for="title">Title</label>
+                                    <div class="input-group">
+                                        <div class="input-group-text"><i class="bi bi-box-arrow-in-down-right"></i></div>
+                                        <select name="title" id="title" class="form-control" required>
+                                            <option value="" disabled selected="">Select</option>
+                                            <option value="Mr">Mr.</option>
+                                            <option value="Mrs">Mrs.</option>
+                                        </select>
+                                    </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="fname">First Name</label>
+                                <div class="input-group">
+                                    <div class="input-group-text"><i class="bi bi-person-lines-fill"></i></div>
+                                    <input type="text" class="form-control" placeholder="Max" id="fname" name="fname" required>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="lname">Last Name</label>
+                                <div class="input-group">
+                                    <div class="input-group-text"><i class="bi bi-person-lines-fill"></i></div>
+                                    <input type="text" class="form-control" placeholder="Mustermann" id="lname" name="lname" required>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="email">E-mail</label>
+                                <div class="input-group">
+                                    <div class="input-group-text"><i class="bi bi-envelope-fill"></i></div>
+                                    <input type="email" class="form-control" placeholder="user@mail.com" id="email" name="email" required>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="username">Username</label>
+                                <div class="input-group">
+                                    <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
+                                    <input type="text" class="form-control" placeholder="max_mustermann" id="username" name="username" required>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="pwd">Password</label>
+                                <div class="input-group">
+                                    <div class="input-group-text"><i class="bi bi-key-fill"></i></div>
+                                    <input type="password" class="form-control" placeholder="********" id="pwd" name="pwd" required>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="pwd-repeat">Repeat Password</label>
+                                <div class="input-group">
+                                    <div class="input-group-text"><i class="bi bi-key-fill"></i></div>
+                                    <input type="password" class="form-control" placeholder="********" id="pwd-repeat" name="pwd-repeat" required>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <button type="submit" name="submit" class="btn btn-secondary px-4 float-end mt-4">Sign Up</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-5 ps-0 d-none d-md-block">
+                        <div class="form-right h-100 bg-dark text-white text-center pt-5">
+                            <i class="bi bi-emoji-smile"></i>
+                            <h2 class="fs-1">Welcome</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- JavaScript Bundle with Popper -->
+
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
