@@ -1,5 +1,5 @@
 <?php
-require_once('./Backend/db/dbaccess.php');
+require_once('../db/dbaccess.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Retrieve data from POST
