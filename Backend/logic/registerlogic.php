@@ -1,8 +1,13 @@
 <?php
 require_once('../db/dbaccess.php');
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Retrieve data from POST
+function sendJsonResponse($isSuccess) {
+    header('Content-Type: application/json');
+    echo json_encode(['success' => $isSuccess]);
+    exit;
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $_POST['title'] ?? '';
     $firstName = $_POST['fname'] ?? '';
     $lastName = $_POST['lname'] ?? '';
@@ -11,27 +16,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['pwd'] ?? '';
     $repeatPassword = $_POST['pwd-repeat'] ?? '';
 
-    // Basic validation (more should be added)
     if ($password !== $repeatPassword) {
-        die('Passwords do not match.');
+        sendJsonResponse(false);
     }
 
-    // Hash the password
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    // SQL to insert new record
     $stmt = $db_obj->prepare("INSERT INTO users (title, first_name, last_name, email, username, password) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssss", $title, $firstName, $lastName, $email, $username, $hashedPassword);
-
-    if ($stmt->execute()) {
-        // Redirect to index.html
-        header("Location: ../../Frontend/Sites/index.html");
-        exit(); // Make sure to exit after redirection
-    } else {
-        echo "Error: " . $stmt->error;
+    if ($stmt) {
+        $stmt->bind_param("ssssss", $title, $firstName, $lastName, $email, $username, $hashedPassword);
+        if ($stmt->execute()) {
+            sendJsonResponse(true);
+        } else {
+            sendJsonResponse(false);
+        }
+        $stmt->close();
     }
-
-    $stmt->close();
     $db_obj->close();
+} else {
+    sendJsonResponse(false);
 }
 ?>
