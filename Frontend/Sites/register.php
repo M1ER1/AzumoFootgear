@@ -5,7 +5,7 @@
     <title>Register</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
-
+    <script src="../JavaScript/register.js" defer></script>
 </head>
 <body>
 <body>
@@ -20,7 +20,7 @@
                     <div class="row">
                         <div class="col-md-7 pe-0">
                             <div class="form-left h-100 py-5 px-5">
-                                <form method="POST" id="login-form" action="process/process-signup.php" class="row g-4">
+                                <form method="POST" id="register-form" class="row g-4" action="../../Backend/logic/registerlogic.php">
                                     <div class="col-12">
 
                                     <label for="title">Title</label>

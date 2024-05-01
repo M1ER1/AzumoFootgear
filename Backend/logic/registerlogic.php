@@ -24,7 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param("ssssss", $title, $firstName, $lastName, $email, $username, $hashedPassword);
 
     if ($stmt->execute()) {
-        echo "New user registered successfully.";
+        // Redirect to index.html
+        header("Location: ../../Frontend/Sites/index.html");
+        exit(); // Make sure to exit after redirection
     } else {
         echo "Error: " . $stmt->error;
     }

@@ -10,10 +10,13 @@ $db_obj = new mysqli($host, $user, $password, $database);
 
 // Check for a connection error
 if ($db_obj->connect_error) {
-    echo "Connection Error: " . $db_obj->connect_error;
+    $error_message = "Connection Error: " . $db_obj->connect_error;
+    // Send error message to browser console
+    echo "<script>console.error('$error_message');</script>";
     exit();
 } else {
-    echo "Connected successfully.<br>";
+    $success_message = "Connected successfully.";
+    // Send success message to browser console
+    echo "<script>console.log('$success_message');</script>";
 }
-
 ?>
